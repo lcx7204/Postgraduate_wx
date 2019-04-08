@@ -1,0 +1,127 @@
+/* pages/mine/mine.wxss */
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.bg{
+  width:750rpx;
+  height:574rpx;
+}
+.avatar-position{
+  position:absolute; 
+  top:255rpx;
+}
+.my-img{
+  width:120rpx;
+  height:120rpx;
+}
+.avatar-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.avatar{
+  width:120rpx;
+  height:120rpx;
+  border-radius: 50%;
+}
+
+.about-container{
+  padding: 0 100rpx;
+  width:550rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position:absolute;
+  top:440rpx;
+}
+.about-us image{
+  width:34rpx;
+  height:34rpx;
+}
+.preview-container{
+  margin-top:30rpx;
+  display: flex;
+  flex-direction: row;
+  padding:0 30rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.preview{
+  margin-bottom: 30rpx;
+}
+.about-us{
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 40rpx;
+  border: solid 1px #bfbfbf;
+  border-radius: 10rpx;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 8px #DDDDDD;
+}
+.book-num{
+  font-size:36rpx;
+  color:#000000;
+}
+.description{
+  font-size:24rpx;
+  color:#999999;
+}
+.about-container > view:nth-child(2){
+  margin-top: -5rpx;
+}
+
+.mine_list{
+  width: 700rpx;
+}
+.mine_publish{
+  width: 700rpx;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: solid 1px rgb(243, 243, 243);
+  display: flex;
+  flex-direction: row;
+}
+.mine_icon{
+  width: 70rpx;
+  text-align: left;
+  margin-top: 6rpx;
+}
+.mine_icon image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.mine_title{
+  width: 530rpx;
+  font-size: 24rpx;
+}
+.mine_arrow{
+  width: 100rpx;
+  text-align: right;
+  margin-top: 10rpx;
+}
+.mine_arrow image{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.line{
+  width: 100%;
+  height: 10rpx;
+  background-color: rgb(243, 243, 243);
+}
+
+.mine_login{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 24rpx;
+  border-bottom: solid 1px rgb(243, 243, 243);
+}
+
+.log_out{
+  color: red;
+}

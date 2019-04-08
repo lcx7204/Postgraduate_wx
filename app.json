@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/recommend/recommend",
+    "pages/plan/plan",
+    "pages/mine/mine",
+    "pages/article/article",
+    "pages/search/search",
+    "pages/recDetail/recDetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "学姐在线",
+    "navigationBarTextStyle":"black"
+  },
+    "tabBar": {
+      "backgroundColor": "#ffffff",
+      "color": "#979795",
+      "selectedColor": "#1c1c1b",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "iconPath": "/images/icon/index.png",
+          "selectedIconPath": "/images/icon/index@highlight.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/recommend/recommend",
+          "iconPath": "/images/icon/recommend.png",
+          "selectedIconPath": "/images/icon/recommend@highlight.png",
+          "text": "推荐"
+        },
+        {
+          "pagePath": "pages/plan/plan",
+          "iconPath": "/images/icon/plan.png",
+          "selectedIconPath": "/images/icon/plan@highlight.png",
+          "text": "计划"
+        },
+        {
+          "pagePath": "pages/mine/mine",
+          "iconPath": "/images/icon/mine.png",
+          "selectedIconPath": "/images/icon/mine@highlight.png",
+          "text": "我的"
+        }
+      ]
+    }
+}

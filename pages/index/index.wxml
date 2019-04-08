@@ -1,0 +1,116 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="header" bindtap='Tosearch'>
+    <view class='box'>
+      <image src="/images/icon/search.png" />
+      <text>搜            索</text>
+    </view>
+  </view>
+
+  <!--轮播图-->
+  <view class="swiper-container">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+      <block wx:for="{{imgUrls}}" wx:key="unique">
+        <swiper-item>
+          <image src="{{item}}" class="img" bindtap="swipclick" />       </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!--文章分类推荐-->
+  <view class='atricleList'>
+    <view class='articleType'>
+      <view class='articleTypeIcon'>
+        <image src='../../images/index/msg.png'></image>
+      </view>
+      <view class='articleTypeTitle'>学姐有话说</view>
+    </view>
+    <view class='articleMiddle'>
+      <view class='articleContent'>
+        <view class='articleContentTop'>你真的决定考研了吗？2020考研全年备考日历请收好!</view>
+        <view class='articleContentDate'>2019-04-06</view>
+      </view>
+      <view class='articlePic'>
+        <image src='../../images/index/wendang.png'></image>
+      </view>
+    </view>
+
+    <view class='articleMiddle'>
+      <view class='articleContent'>
+        <view class='articleContentTop'>世上没有后悔药，考研信息要知道!</view>
+        <view class='articleContentDate'>2019-04-05</view>
+      </view>
+      <view class='articlePic'>
+        <image src='../../images/index/kaoyan.png'></image>
+      </view>
+    </view>
+    <!--华丽的分割线-->
+    <view class='line'></view>
+
+    <view class='articleType'>
+      <view class='articleTypeIcon'>
+        <image src='../../images/index/selectSchool.png'></image>
+      </view>
+      <view class='articleTypeTitle'>院校选择</view>
+    </view>
+    <view class='articleMiddle'>
+      <view class='articleContent'>
+        <view class='articleContentTop'>世上没有后悔药，考研信息要知道!</view>
+        <view class='articleContentDate'>2019-04-05</view>
+      </view>
+      <view class='articlePic'>
+        <image src='../../images/index/school.png'></image>
+      </view>
+    </view>
+    <!--华丽的分割线-->
+    <view class='line'></view>
+
+    <view class='articleType'>
+      <view class='articleTypeIcon'>
+        <image src='../../images/index/experience.png'></image>
+      </view>
+      <view class='articleTypeTitle'>备考经验</view>
+    </view>
+    <view class='articleMiddle'>
+      <view class='articleContent'>
+        <view class='articleContentTop'>世上没有后悔药，考研信息要知道!</view>
+        <view class='articleContentDate'>2019-04-05</view>
+      </view>
+      <view class='articlePic'>
+        <image src='../../images/index/jingyan.png'></image>
+      </view>
+    </view>
+    <!--华丽的分割线-->
+    <view class='line'></view>
+
+    <view class='articleType'>
+      <view class='articleTypeIcon'>
+        <image src='../../images/index/exam.png'></image>
+      </view>
+      <view class='articleTypeTitle'>复试</view>
+    </view>
+    <view class='articleMiddle'>
+      <view class='articleContent'>
+        <view class='articleContentTop'>你真的决定考研了吗？2020考研全年备考日历请收好!</view>
+        <view class='articleContentDate'>2019-04-06</view>
+      </view>
+      <view class='articlePic'>
+        <image src='../../images/index/kaoshi1.png'></image>
+      </view>
+    </view>
+
+    <view class='articleMiddle'>
+      <view class='articleContent'>
+        <view class='articleContentTop'>世上没有后悔药，考研信息要知道!</view>
+        <view class='articleContentDate'>2019-04-05</view>
+      </view>
+      <view class='articlePic'>
+        <image src='../../images/index/kaoshi2.png'></image>
+      </view>
+    </view>
+    <!--华丽的分割线-->
+    <view class='line'></view>
+
+  </view>
+  
+</view>
