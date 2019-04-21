@@ -1,2 +1,53 @@
-<!--pages/article/article.wxml-->
-<text>pages/article/article.wxml</text>
+<view class='container'>
+  <view class='articleTitle'>{{articleName}}</view>
+  <!--主体内容富文本-->
+  <view class='richText'>
+    <view class='product-content'>
+      <import src="../../wxParse/wxParse.wxml" />
+      <view class="wxParse">
+        <scroll-view style="height:auto;" scroll-y='true'>
+          <template is="wxParse" data="{{wxParseData:detail_content.nodes}}" />
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <!--点赞与收藏-->
+  <view class='article_bottom'>
+    <view class='zan'>
+      <image src='../../images/icon/zan.png' wx:if="{{!isZan}}" bindtap='zan'></image>
+      <image src='../../images/icon/zan@select.png' wx:else bindtap='unzan'></image>
+      <view>{{praiseNum}}</view>
+    </view>
+    <view class='keep'>
+      <image src='../../images/icon/keep.png' wx:if="{{!isKeep}}" bindtap='keep'></image>
+      <image src='../../images/icon/keep@select.png' wx:else bindtap='unkeep'></image>
+    </view>
+  </view>
+  <!--留言显示区-->
+  <view class='commentLists' wx:if="{{commentflag}}">
+    <view class='commentList' wx:for="{{commentArray}}">
+      <view class='user_icon'>
+        <image src='../../images/index/avatar.png'></image>
+      </view>
+      <view class='comment_right'>
+        <view class='user_name'>Jakarta</view>
+        <view class='comment_content'>{{item.commentContent}}</view>
+      </view>
+    </view>
+  </view>
+  <view style='width:100%;text-align:center;margin-bottom:100rpx' wx:else>暂无评论</view>
+  <!--底部评论框-->
+  <view class="add-wrap" hover-class="plus-hover">
+    <form bindsubmit='addComment'>
+
+      <view class='comment'>
+        <view class='inputContext'>
+          <input type='text' placeholder='请输入评论' name='commentContent' value='{{commentContent}}'></input>
+        </view>
+        <view class='sub_btn'>
+          <button form-type='submit'>发布</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

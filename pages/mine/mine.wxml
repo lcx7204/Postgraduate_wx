@@ -4,7 +4,7 @@
      <image slot="img" class="avatar" src="/images/mine/avatar.png" /> 
     </img-btn-cmp>
     <view class="avatar-container avatar-position">
-      <image src="/images/mine/avatar.png" class="avatar" />
+      <image src="{{avatar}}" class="avatar" />
     </view>
     <!--列表-->
     <view class='mine_list'>
@@ -18,7 +18,7 @@
         <view class='mine_title'>复习计划</view>
         <view class='mine_arrow'><image src='/images/mine/arrow.png'></image></view>
       </view>
-      <view class='mine_publish' bindtap='toPubList'>
+      <view class='mine_publish' bindtap='toPubList' bindtap='toChat'>
         <view class='mine_icon'><image src='/images/mine/message.png'></image></view>
         <view class='mine_title'>考研咨询</view>
         <view class='mine_arrow'><image src='/images/mine/arrow.png'></image></view>
@@ -34,8 +34,11 @@
       清除本地缓存
     </view> -->
     <view class='line'></view>
-    <view class='mine_login log_out'>
-      退出登录
+    <button class='mine_login' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo" wx:if="{{hasLogin}}">
+        授权登录
+    </button>
+    <view class='mine_login log_out' wx:else>
+      已授权
     </view>
     <!--tabbar-->
     <tabbar tabbar="{{tabbar}}"></tabbar>

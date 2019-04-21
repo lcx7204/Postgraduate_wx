@@ -1,2 +1,9 @@
-<!--pages/plan/plan.wxml-->
-<text>pages/plan/plan.wxml</text>
+<view>
+  <view class="card" wx:for="{{arr}}" bindtap='toArticleDetail'  wx:key="{{index}}" id="{{item.articleId}}" >
+    <view bindtap="onItemClick">
+      <image class="image" mode="aspectFill" src="{{item.fenmianPic}}" />
+      <text class="time">{{item.publishDate}}</text>
+      <view class="title">{{item.articleName}}</view>
+    </view>
+  </view>
+</view>

@@ -114,11 +114,12 @@
 }
 
 .mine_login{
-  width: 100%;
+  width: 98%;
+  margin: auto;
   height: 50px;
   line-height: 50px;
   text-align: center;
-  font-size: 24rpx;
+  font-size: 30rpx;
   border-bottom: solid 1px rgb(243, 243, 243);
 }
 

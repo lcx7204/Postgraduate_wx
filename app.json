@@ -6,7 +6,8 @@
     "pages/mine/mine",
     "pages/article/article",
     "pages/search/search",
-    "pages/recDetail/recDetail"
+    "pages/recDetail/recDetail",
+    "pages/chat/chat"
   ],
   "window":{
     "backgroundTextStyle":"light",

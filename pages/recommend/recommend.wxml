@@ -1,29 +1,125 @@
 <view>
   <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">APP</view>
-    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">公众号</view>
-    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">电影</view>
-    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">书籍</view>
-    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">头像</view>
-    <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">其他</view>
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" id="2001" bindtap="swichNav">APP</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" id="2002" bindtap="swichNav">公众号</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" id="2003" bindtap="swichNav">电影</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" id="2004" bindtap="swichNav">书籍</view>
+    <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" id="2005" bindtap="swichNav">头像</view>
+    <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" id="2006" bindtap="swichNav">其他</view>
   </scroll-view>
   <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
-    <swiper-item wx:for="{{[0,1,2,3,4,5]}}">
+    <swiper-item>
       <scroll-view scroll-y="true" class="scoll-h">
-        <block wx:for="{{[1,2,3,4,5]}}" wx:key="*this">
+        <block wx:for="{{cate01Arr}}" wx:key="*this">
           <view class="item-ans">
             <view class="avatar">
               <image class="img" src="/images/index/avatar.png"></image>
             </view>
             <view class="expertInfo">
-              <view class="name">研途有你</view>
-              <view class="tag">一个关于考研的公众号</view>
+              <view class="name">{{item.recommendTitle}}</view>
+              <view class="tag">{{item.recommendContent}}</view>
               <view class="answerHistory">134个回答，2234人收藏 </view>
             </view>
-            <navigator url="/pages/recDetail/recDetail" class="askBtn">查看</navigator>
+            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
           </view>
         </block>
       </scroll-view>
     </swiper-item>
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:for="{{cate02Arr}}" wx:key="*this">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="/images/index/avatar.png"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">{{item.recommendTitle}}</view>
+              <view class="tag">{{item.recommendContent}}</view>
+              <view class="answerHistory">134个回答，2234人收藏 </view>
+            </view>
+            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:for="{{cate03Arr}}" wx:key="*this">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="/images/index/avatar.png"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">{{item.recommendTitle}}</view>
+              <view class="tag">{{item.recommendContent}}</view>
+              <view class="answerHistory">134个回答，2234人收藏 </view>
+            </view>
+            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:for="{{cate04Arr}}" wx:key="*this">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="/images/index/avatar.png"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">{{item.recommendTitle}}</view>
+              <view class="tag">{{item.recommendContent}}</view>
+              <view class="answerHistory">134个回答，2234人收藏 </view>
+            </view>
+            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:for="{{cate05Arr}}" wx:key="*this">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="/images/index/avatar.png"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">{{item.recommendTitle}}</view>
+              <view class="tag">{{item.recommendContent}}</view>
+              <view class="answerHistory">134个回答，2234人收藏 </view>
+            </view>
+            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class="scoll-h">
+        <block wx:for="{{cate06Arr}}" wx:key="*this">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="/images/index/avatar.png"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">{{item.recommendTitle}}</view>
+              <view class="tag">{{item.recommendContent}}</view>
+              <view class="answerHistory">134个回答，2234人收藏 </view>
+            </view>
+            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+
+
   </swiper>
 </view>

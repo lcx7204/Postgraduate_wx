@@ -2,57 +2,54 @@
 <view class="container">
 
   <view class="head">
-    <image src="/images/index/book1.jpg"></image>
-    <text class='title'>{{book.title}}</text>
-    <text class='author'>{{book.author}}</text>
+    <image src="{{recommendIcon}}"></image>
+    <text class='title'>{{recommendTitle}}</text>
+    <text class='author'>{{author}}</text>
   </view>
   <view class="sub-container">
     <text class="headline">短评</text>
-    <text class="shadow" wx:if="{{noComment}}">还没有短评</text>
-    <view class="comment-container">
+    <text class="shadow" wx:if="{{commentflag}}">还没有短评</text>
+    <view class="comment-container" wx:else>
       <block wx:for="{{util.limit(comments,15)}}">
-        <tag-cmp class="tag" text="{{item.content}}">
-          <text class="num" slot="after">{{'+' + item.nums}}</text>
+        <tag-cmp class="tag bg{{index%9}}" text="{{item.commentContent}}">
+          {{item.commentContent}}
         </tag-cmp>
       </block>
     </view>
   </view>
   <view class="sub-container">
     <text class="headline">内容简介</text>
-    <text decode="{{true}}" class="content">{{util.format(book.summary)}}</text>
+    <text decode="{{true}}" class="content">{{util.format(recommendDetail)}}</text>
   </view>
   <view class="sub-container">
     <text class="headline">书本信息</text>
     <view class="detail-contaner">
       <view class="vertical">
-        <text class="description">出版社</text>
-        <text class="description">出版年</text>
-        <text class="description">页数</text>
+        <text class="description">公司机构</text>
+        <text class="description">作者运营团队</text>
         <text class="description">定价</text>
-        <text class="description">装帧</text>
+        <text class="description">日期</text>
       </view>
       <view class="vertical">
-        <text class="">{{book.publisher}}</text>
-        <text class="">{{book.pubdate}}</text>
-        <text class="">{{book.pages}}</text>
-        <text class="">{{book.price}}</text>
-        <text class="">{{book.binding}}</text>
+        <text class="">{{companyName}}</text>
+        <text class="">{{author}}</text>
+        <text class="">{{price}}</text>
+        <text class="">{{publishDate}}</text>
       </view>
 
     </view>
   </view>
 </view>
+<form bindsubmit='addComment'>
 <view class="post-container" wx:if="{{!posting}}">
   <view class="post-fake" bind:tap="onFakePost">
-    <text>输入短评</text>
+    <input type='text' placeholder='请输入短评' maxlength='10' name='commentContent' value='{{commentContent}}'></input>
   </view>
-   <view class="like-container">
-      <like-cmp bind:like="onLike" class="like" like="{{like}}" count="{{count}}" />
-      <img-btn-cmp class="share-btn" open-type="share">
-        <image class="share" slot="img" src="/images/icon/share.png" />
-      </img-btn-cmp>
-    </view>
+  <view class='sub_btn'>
+    <button form-type='submit'>发布</button>
+  </view>
 </view>
+</form>
 
 <mask-cmp wx:if="{{posting}}" />
 
@@ -79,16 +76,16 @@
   var limit = function(array, length) {
     return array.slice(0, length)
   }
-  var format = function(text){
-    if(!text){
+  var format = function(text) {
+    if (!text) {
       return
     }
-    var reg = getRegExp('\\\\n','g')
-    var text = text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+    var reg = getRegExp('\\\\n', 'g')
+    var text = text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
     return text
   }
   module.exports = {
     limit: limit,
-    format:format
+    format: format
   }
 </wxs>
