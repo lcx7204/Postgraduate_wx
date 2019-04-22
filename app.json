@@ -4,6 +4,7 @@
     "pages/recommend/recommend",
     "pages/plan/plan",
     "pages/mine/mine",
+    "pages/myKeep/myKeep",
     "pages/article/article",
     "pages/search/search",
     "pages/recDetail/recDetail",

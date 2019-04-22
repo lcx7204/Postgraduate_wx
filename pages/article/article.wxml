@@ -27,10 +27,10 @@
   <view class='commentLists' wx:if="{{commentflag}}">
     <view class='commentList' wx:for="{{commentArray}}">
       <view class='user_icon'>
-        <image src='../../images/index/avatar.png'></image>
+        <image src='{{item.avatarUrl}}'></image>
       </view>
       <view class='comment_right'>
-        <view class='user_name'>Jakarta</view>
+        <view class='user_name'>{{item.nick_name}}</view>
         <view class='comment_content'>{{item.commentContent}}</view>
       </view>
     </view>

@@ -175,5 +175,12 @@ Page({
     wx.navigateTo({
       url: '/pages/chat/chat',
     })
+  },
+  //跳转至收藏页面
+  toMyKeep:function(){
+    console.log("/pages/myKeep/myKeep");
+    wx.navigateTo({
+      url: '/pages/myKeep/myKeep',
+    })
   }
 })

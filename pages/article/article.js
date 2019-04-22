@@ -357,6 +357,8 @@ Page({
             nick_name:''
           }
           json.commentContent = res.data.data[i].commentContent;
+          json.avatarUrl = res.data.data[i].user.avatorUrl;
+          json.nick_name = res.data.data[i].user.nickName;
           //TODO
           data.push(json);
         }

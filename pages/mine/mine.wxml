@@ -8,7 +8,7 @@
     </view>
     <!--列表-->
     <view class='mine_list'>
-      <view class='mine_publish' bindtap='toPubList'>
+      <view class='mine_publish' bindtap='toPubList' bindtap='toMyKeep'>
         <view class='mine_icon'><image src='/images/mine/keep.png'></image></view>
         <view class='mine_title'>我的收藏</view>
         <view class='mine_arrow'><image src='/images/mine/arrow.png'></image></view>

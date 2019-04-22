@@ -1,0 +1,13 @@
+<view class="container">
+  <view class='atricleList'>
+    <view class='articleMiddle' wx:for="{{cateArray}}" wx:key="{{index}}" id="{{item.articleId}}" bindtap='toArticleDetail'>
+      <view class='articleContent'>
+        <view class='articleContentTop'>{{item.articleName}}</view>
+        <view class='articleContentDate'>{{item.publishDate}}</view>
+      </view>
+      <view class='articlePic'>
+        <image src='{{item.fenmianPic}}'></image>
+      </view>
+    </view>
+  </view>
+</view>

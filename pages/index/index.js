@@ -92,6 +92,7 @@ Page({
       data: {articleCategory:"10%"},
       method:'GET',
       success:function(res){
+        console.log(res.data);
         for(var i = 0;i<res.data.data.length;i++){
           var dataJSON = {
             articleId:'',
