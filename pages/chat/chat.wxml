@@ -1,0 +1,32 @@
+<view class='container'>
+  <view class='chat_top'>
+    <view class='user_icon'>
+      <image src='../../images/index/avatar.png'></image>
+    </view>
+    <view class='user_name'>Jakarat</view>
+  </view>
+  <view class='chat_view'>
+    <view class='{{item.classStyle}}' wx:for="{{chatList}}">
+      <view class='message_date'>{{item.chatDate}}</view>
+      <view class='to_msg'>{{item.chatContent}}</view>
+    </view>
+    <!-- <view class='message_from'>
+      <view class='message_date'>2018-01-01 11:22:21</view>
+      <view class='from_msg'>收到请回答。。</view>
+    </view> -->
+    <view class='no-msg'>暂无最新消息</view>
+  </view>
+  <view class="add-wrap" hover-class="plus-hover">
+    <form bindsubmit='addChat'>
+
+      <view class='comment'>
+        <view class='inputContext'>
+          <input type='text' placeholder='咨询' name='addChat' value='{{addChat}}'></input>
+        </view>
+        <view class='sub_btn'>
+          <button form-type='submit'>发布</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>
