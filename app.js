@@ -30,6 +30,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    serverUrl:'http://127.0.0.1:8081/Postgraduates'
+    serverUrl:'http://kaoyan.natapp1.cc/Postgraduates'
   }
 })

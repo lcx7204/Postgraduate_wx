@@ -16,6 +16,7 @@ Page({
     sessionId: '',
     chatList:[],
     increase:false,//图片添加区域隐藏
+    timer:''
   },
 
   /**
@@ -39,66 +40,32 @@ Page({
           sessionId: res.data
         });
         //调用通信接口
-        var url = "ws://127.0.0.1:8081/Postgraduates/ws";
+        var url = "ws://kaoyan.natapp1.cc/Postgraduates/ws";
         websocket.connect(that.data.userId, url, function (res) {
           var list = [];
           list = that.data.chatList;
-          console.log(that.res.data);
           list.push(JSON.parse(res.data));
           that.setData({
             chatList: list
           })
         });
-        //先加载一遍数据
-        //获取当前时间，格式YYYY-MM-DD
-        function getNowFormatDate(date) {
-          var seperator1 = "-";
-          var year = date.getFullYear();
-          var month = date.getMonth() + 1;
-          var strDate = date.getDate();
-          if (month >= 1 && month <= 9) {
-            month = "0" + month;
-          }
-          if (strDate >= 0 && strDate <= 9) {
-            strDate = "0" + strDate;
-          }
-          var currentdate = year + seperator1 + month + seperator1 + strDate;
-          return currentdate;
-        }
-        //接收用户消息
-        var message = [];
-        wx.request({
-          url: that.serverUrl + '/chat/getUserChat?userId=' + that.userId,
-          header: { 'Cookie': 'JSESSIONID=' + that.data.sessionId },
-          method: 'GET',
-          success: function (res) {
-            console.log(res.data);
-            for (var i = 0; i < res.data.data.length; i++) {
-              var json = {
-                sendId: '',
-                chatContent: '',
-                chatDate: '',
-                classStyle: ''
-              }
-              json.accessId = res.data.data[i].accessId;
-              json.chatContent = res.data.data[i].chatContent;
-              json.chatDate = getNowFormatDate(new Date(res.data.data[i].chatDate));
-              if (json.accessId == that.data.userId) {
-                json.classStyle = 'message_to'
-              } else {
-                json.classStyle = "message_from"
-              }
-              message.push(json);
-            }
-            that.setData({
-              chatList: message
-            })
-          }, fail: function (res) {
-            console.log(res.data);
-          }
-        })
       }
     });
+    this.startReportHeart();
+  },
+
+
+
+  startReportHeart() {
+    var that = this;
+    var timerTem = setTimeout(function () {
+      that.getChatList();
+      that.startReportHeart();
+    }, 1000)
+    // 保存定时器name
+    that.setData({
+      timer: timerTem
+    })
   },
 
   /**
@@ -130,7 +97,7 @@ Page({
     wx.showToast({
       title: '连接已断开',
       icon:'none',
-      duration:2000
+      duration:5000
     })
   },
 
@@ -174,7 +141,11 @@ Page({
       })
     },500);
     websocket.send('{ "chatContent": "' + chatMsg + '", "sendId": "' + this.data.userId + '","type":"text", "accessId": "' + that.data.acessId  + '" }');
-    
+    that.getChatList();
+  },
+  //获取消息
+  getChatList:function(){
+    var that = this;
     //获取当前时间，格式YYYY-MM-DD
     function getNowFormatDate(date) {
       var seperator1 = "-";
@@ -193,22 +164,21 @@ Page({
     //接收用户消息
     var message = [];
     wx.request({
-      url: that.serverUrl +'/chat/getUserChat?userId='+that.userId,
+      url: that.serverUrl + '/chat/getUserChat?userId=' + that.data.userId,
       header: { 'Cookie': 'JSESSIONID=' + that.data.sessionId },
-      method:'GET',
-      success:function(res){
-        console.log(res.data);
-        for(var i = 0;i<res.data.data.length;i++){
+      method: 'GET',
+      success: function (res) {
+        for (var i = 0; i < res.data.data.length; i++) {
           var json = {
-            sendId:'',
-            chatContent:'',
-            chatDate:'',
-            classStyle:''
+            sendId: '',
+            chatContent: '',
+            chatDate: '',
+            classStyle: ''
           }
           json.accessId = res.data.data[i].accessId;
           json.chatContent = res.data.data[i].chatContent;
           json.chatDate = getNowFormatDate(new Date(res.data.data[i].chatDate));
-          if(json.accessId==that.data.userId){
+          if (json.accessId == that.data.userId) {
             json.classStyle = 'message_to'
           } else {
             json.classStyle = "message_from"
@@ -216,9 +186,9 @@ Page({
           message.push(json);
         }
         that.setData({
-          chatList:message
+          chatList: message
         })
-      },fail:function(res){
+      }, fail: function (res) {
         console.log(res.data);
       }
     })
