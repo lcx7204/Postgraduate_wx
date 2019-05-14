@@ -13,7 +13,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "学姐在线",
+    "navigationBarTitleText": "学姐在线帮考研",
     "navigationBarTextStyle":"black"
   },
     "tabBar": {

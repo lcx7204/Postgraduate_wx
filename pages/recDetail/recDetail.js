@@ -21,7 +21,8 @@ Page({
     noComment: true,
     posting: false,
     like: false,
-    count: 0
+    count: 0,
+    isFlag:true
   },
 
   /**
@@ -127,6 +128,9 @@ Page({
           }
           var currentdate = year + seperator1 + month + seperator1 + strDate;
           return currentdate;
+        }
+        if (res.data.data.companyName==''){
+          that.setData({isFlag:false});
         }
         that.setData({
           recommendIcon: res.data.data.recommendIcon,

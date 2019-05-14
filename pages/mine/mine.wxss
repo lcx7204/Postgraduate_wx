@@ -7,6 +7,7 @@
 .bg{
   width:750rpx;
   height:574rpx;
+  background-color:lightblue;
 }
 .avatar-position{
   position:absolute; 
@@ -88,6 +89,7 @@
   width: 70rpx;
   text-align: left;
   margin-top: 6rpx;
+  height: auto;
 }
 .mine_icon image{
   width: 40rpx;

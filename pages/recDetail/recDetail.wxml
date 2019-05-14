@@ -21,7 +21,7 @@
     <text class="headline">内容简介</text>
     <text decode="{{true}}" class="content">{{util.format(recommendDetail)}}</text>
   </view>
-  <view class="sub-container">
+  <view class="sub-container" wx:if="{{isFlag}}">
     <text class="headline">书本信息</text>
     <view class="detail-contaner">
       <view class="vertical">

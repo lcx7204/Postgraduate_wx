@@ -5,16 +5,13 @@
     <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" id="2003" bindtap="swichNav">电影</view>
     <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" id="2004" bindtap="swichNav">书籍</view>
     <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" id="2005" bindtap="swichNav">头像</view>
-    <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" id="2006" bindtap="swichNav">其他</view>
+    <!-- <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" id="2006" bindtap="swichNav">其他</view> -->
   </scroll-view>
   <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
     <swiper-item>
       <scroll-view scroll-y="true" class="scoll-h">
         <block wx:for="{{cate01Arr}}" wx:key="*this">
           <view class="item-ans">
-            <view class="avatar">
-              <image class="img" src="/images/index/avatar.png"></image>
-            </view>
             <view class="expertInfo">
               <view class="name">{{item.recommendTitle}}</view>
               <view class="tag">{{item.recommendContent}}</view>
@@ -29,9 +26,6 @@
       <scroll-view scroll-y="true" class="scoll-h">
         <block wx:for="{{cate02Arr}}" wx:key="*this">
           <view class="item-ans">
-            <view class="avatar">
-              <image class="img" src="/images/index/avatar.png"></image>
-            </view>
             <view class="expertInfo">
               <view class="name">{{item.recommendTitle}}</view>
               <view class="tag">{{item.recommendContent}}</view>
@@ -47,9 +41,6 @@
       <scroll-view scroll-y="true" class="scoll-h">
         <block wx:for="{{cate03Arr}}" wx:key="*this">
           <view class="item-ans">
-            <view class="avatar">
-              <image class="img" src="/images/index/avatar.png"></image>
-            </view>
             <view class="expertInfo">
               <view class="name">{{item.recommendTitle}}</view>
               <view class="tag">{{item.recommendContent}}</view>
@@ -65,9 +56,6 @@
       <scroll-view scroll-y="true" class="scoll-h">
         <block wx:for="{{cate04Arr}}" wx:key="*this">
           <view class="item-ans">
-            <view class="avatar">
-              <image class="img" src="/images/index/avatar.png"></image>
-            </view>
             <view class="expertInfo">
               <view class="name">{{item.recommendTitle}}</view>
               <view class="tag">{{item.recommendContent}}</view>
@@ -81,36 +69,89 @@
 
     <swiper-item>
       <scroll-view scroll-y="true" class="scoll-h">
-        <block wx:for="{{cate05Arr}}" wx:key="*this">
-          <view class="item-ans">
-            <view class="avatar">
-              <image class="img" src="/images/index/avatar.png"></image>
-            </view>
-            <view class="expertInfo">
-              <view class="name">{{item.recommendTitle}}</view>
-              <view class="tag">{{item.recommendContent}}</view>
-            </view>
-            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
-          </view>
-        </block>
-      </scroll-view>
-    </swiper-item>
+      <view class='pic_view'>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/001.png'></image>
+        </view>
+        <view class='pic_name'>001.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/002.png'></image>
+        </view>
+        <view class='pic_name'>002.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/003.png'></image>
+        </view>
+        <view class='pic_name'>003.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/004.png'></image>
+        </view>
+        <view class='pic_name'>004.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/005.png'></image>
+        </view>
+        <view class='pic_name'>005.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/006.png'></image>
+        </view>
+        <view class='pic_name'>006.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/007.png'></image>
+        </view>
+        <view class='pic_name'>007.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/008.png'></image>
+        </view>
+        <view class='pic_name'>008.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/009.png'></image>
+        </view>
+        <view class='pic_name'>009.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/010.png'></image>
+        </view>
+        <view class='pic_name'>010.png</view>
 
-
-    <swiper-item>
-      <scroll-view scroll-y="true" class="scoll-h">
-        <block wx:for="{{cate06Arr}}" wx:key="*this">
-          <view class="item-ans">
-            <view class="avatar">
-              <image class="img" src="/images/index/avatar.png"></image>
-            </view>
-            <view class="expertInfo">
-              <view class="name">{{item.recommendTitle}}</view>
-              <view class="tag">{{item.recommendContent}}</view>
-            </view>
-            <view class="askBtn" id="{{item.recommendId}}" bindtap='toRecommendDetail'>查看</view>
-          </view>
-        </block>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/011.png'></image>
+        </view>
+        <view class='pic_name'>011.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/012.png'></image>
+        </view>
+        <view class='pic_name'>012.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/013.png'></image>
+        </view>
+        <view class='pic_name'>013.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/014.png'></image>
+        </view>
+        <view class='pic_name'>014.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/015.png'></image>
+        </view>
+        <view class='pic_name'>015.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/016.png'></image>
+        </view>
+        <view class='pic_name'>016.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/017.png'></image>
+        </view>
+        <view class='pic_name'>017.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/018.png'></image>
+        </view>
+        <view class='pic_name'>018.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/019.png'></image>
+        </view>
+        <view class='pic_name'>019.png</view>
+        <view class='pic_url'>
+          <image src='../../images/touxiang/020.png'></image>
+        </view>
+        <view class='pic_name'>020.png</view>
+      </view>
       </scroll-view>
     </swiper-item>
 

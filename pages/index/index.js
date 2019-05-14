@@ -13,9 +13,9 @@ Page({
     duration: 800,
     circular: true,
     imgUrls: [
-      'https://p3.pstatp.com/large/43700001e49d85d3ab52',
-      'https://p3.pstatp.com/large/39f600038907bf3b9c96',
-      'https://p3.pstatp.com/large/31fa0003ed7228adf421'
+      'http://images.cnblogs.com/cnblogs_com/linchengxinsx/1458121/o_banner1.png',
+      'http://images.cnblogs.com/cnblogs_com/linchengxinsx/1458121/o_banner2.png',
+      'http://images.cnblogs.com/cnblogs_com/linchengxinsx/1458121/o_banner3.png'
     ],
     links: [],
     cate01Array:[],

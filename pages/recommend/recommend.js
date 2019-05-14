@@ -10,7 +10,7 @@ Page({
     cate03Arr:[],
     cate04Arr:[],
     cate05Arr:[],
-    cate06Arr:[]
+    cate06Arr:[],
   },
   // 滚动切换标签样式
   switchTab: function (e) {

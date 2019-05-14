@@ -1,5 +1,6 @@
 <view class='container'>
-   <image src="/images/mine/mine_bg.jpg" class="bg"></image>
+   <!-- <image src="/images/mine/mine_bg.jpg" class="bg"></image> -->
+   <div class='bg'></div>
    <img-btn-cmp class="avatar-position">
      <image slot="img" class="avatar" src="/images/mine/avatar.png" /> 
     </img-btn-cmp>
@@ -13,21 +14,21 @@
         <view class='mine_title'>我的收藏</view>
         <view class='mine_arrow'><image src='/images/mine/arrow.png'></image></view>
       </view>
-      <view class='mine_publish' bindtap='toPubList'>
+      <!-- <view class='mine_publish' bindtap='toPubList'>
         <view class='mine_icon'><image src='/images/mine/mine_publish.png'></image></view>
         <view class='mine_title'>复习计划</view>
         <view class='mine_arrow'><image src='/images/mine/arrow.png'></image></view>
-      </view>
+      </view> -->
       <view class='mine_publish' bindtap='toPubList' bindtap='toChat'>
         <view class='mine_icon'><image src='/images/mine/message.png'></image></view>
         <view class='mine_title'>考研咨询</view>
         <view class='mine_arrow'><image src='/images/mine/arrow.png'></image></view>
       </view>
-      <view class='mine_publish'>
+      <!-- <view class='mine_publish'>
         <view class='mine_icon'><image src='/images/mine/setting.png'></image></view>
         <view class='mine_title'>意见反馈</view>
         <view class='mine_arrow'><image src='/images/mine/arrow.png'></image></view>
-      </view>
+      </view> -->
     </view>
     <!-- <view class='line'></view>
     <view class='mine_login'>
