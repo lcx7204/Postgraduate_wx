@@ -29,6 +29,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.serverUrl = app.globalData.serverUrl;
+    console.log(this.serverUrl);
     this.setData({
       recommendId: options.recommendId,
     });
@@ -51,7 +53,6 @@ Page({
         that.getCommentListByArticleId();
       }
     });
-    this.serverUrl = app.globalData.serverUrl;
     this.getRecommendDetail();
   },
 

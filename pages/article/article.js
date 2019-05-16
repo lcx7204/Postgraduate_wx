@@ -26,6 +26,9 @@ Page({
    */
   onLoad: function (options) {
     this.serverUrl = app.globalData.serverUrl;
+    this.setData({
+      articleId: options.articleId,
+    });
     var that = this;
     wx.getStorage({
       key: 'userId',
@@ -46,9 +49,6 @@ Page({
         //获取评论列表
         that.getCommentListByArticleId();
       }
-    });
-    this.setData({
-      articleId: options.articleId,
     });
     //根据ID获取详情
     this.getArticleDetail();

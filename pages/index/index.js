@@ -51,6 +51,7 @@ Page({
 
   bindViewTap: function() {
     
+    this.serverUrl = app.globalData.serverUrl;
   },
 
   onLoad: function () {
