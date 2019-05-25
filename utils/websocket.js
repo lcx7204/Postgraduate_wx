@@ -1,4 +1,5 @@
 function connect(user,url,func){
+  console.log(url);
 	wx.connectSocket({
 		url:url,
 		header:{'content-type':'application/json'},
@@ -31,7 +32,17 @@ function connect(user,url,func){
 //发送消息
 function send(msg){
 	wx.sendSocketMessage({
-		data:msg
+		data:msg,
+    success:function(e){
+      console.log(e);
+    },
+    fail:function(e){
+      console.log(e);
+    },
+    complete:function(e){
+      console.log("finish");
+      console.log(e);
+    }
 	});
 }
 module.exports = {

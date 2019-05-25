@@ -16,7 +16,8 @@ Page({
     sessionId: '',
     chatList:[],
     increase:false,//图片添加区域隐藏
-    timer:''
+    timer:'',
+    addChat:''
   },
 
   /**
@@ -134,13 +135,16 @@ Page({
       })
     }
     //发送消息
-    var url = "ws://127.0.0.1:8081/Postgraduate/ws";
+    //var url = "ws://kaoyan.natapp1.cc/Postgraduates/Postgraduate/ws";
     setTimeout(function(){
       that.setData({
         increase:false
       })
     },500);
     websocket.send('{ "chatContent": "' + chatMsg + '", "sendId": "' + this.data.userId + '","type":"text", "accessId": "' + that.data.acessId  + '" }');
+    that.setData({
+      addChat:''
+    })
     that.getChatList();
   },
   //获取消息
